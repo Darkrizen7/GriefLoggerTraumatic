@@ -24,7 +24,7 @@ public class LookupCommand implements ICommand {
     @Override
     public LiteralArgumentBuilder<CommandSourceStack> getCommand() {
         return Commands.literal("lookup")
-                .requires(source -> source.hasPermission(2))
+                .requires(source -> source.hasPermission(0))
                 .then(Commands.argument("filter1", StringArgumentType.string())
                         .suggests((context, builder) -> new FilterArgument().listSuggestions(context, builder))
                         .then(Commands.argument("filter2", StringArgumentType.string())
